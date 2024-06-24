@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+}
+body{
+    height: 100vh;
+    width:100%;
+    background-color: rgb(176, 243, 243);
+}
+#navbar{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color:cornsilk;
+    width:100%;
+    height: 50px;
+}
+#insta{
+    size: 50px;
+}
+#data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 20px;
+    /* visibility: hidden; */
+
+}
+button{
+    background-color: midnightblue;
+    color: white;
+    padding: 10px;
+    margin-left: -4px;
+    width: 60px;
+    border-radius: 3px;
+}
+#h1{
+    font-size: 60px;
+}
+input{
+    padding: 10px;
+    width: 200px;
+}
+input:hover{
+    background-color: rgb(151, 228, 228);
+}
+#data i{
+    margin-top: 20px;
+    font-size: 90px;
+   
+
+}
+#div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#click{
+    width: 10px;
+}

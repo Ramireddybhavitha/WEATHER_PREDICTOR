@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather</title>
+    <link rel="stylesheet" href="./weather.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+    <body>
+        <section id="navbar">
+            <div><a href="./instagram.html"><i class="fa-brands fa-instagram" style="color: #da10c3;"></i></a></div>
+            <div><a href="./realtime.html"><i class="fa-solid fa-clipboard-check" style="color: #1f5125;"></i></a></div>
+            <div><a href="./convertorsmultiple.html"><i class="fa-solid fa-calculator" style="color: #251f51;"></i></a></div>
+            <div><a href="./weatherappl.html"><i class="fa-solid fa-cloud" style="color: #13e4e7;"></i></a></div>
+        </section>
+    <!-- <section id="image">
+        <i class="fa-solid fa-cloud" id="click"></i>
+    </section> -->
+    <section id="data">
+        <h1 id="h1"><b>Weather app</b></h1> <br><br><br>
+        <div id="div">
+<div>
+    <input type="text" placeholder="Location" id="input">
+<button id="btn">Get</button> <br>
+</div>
+<i class="fa-solid fa-cloud" style="color: #ffffff;"></i>
+<div ><span id="temp"></span><span>&deg;</span></div>
+<div ><span id="cloud"></span> </div>
+<div> <span id="loc"></span></div>
+</div>
+    </section>
+
+
+    <script>
+        var locval=document.getElementById('loc')
+        var input=document.getElementById('input')
+        var temps=document.getElementById('temp')
+        var cloud=document.getElementById('cloud')
+        var btn=document.getElementById('btn')
+const a='73bcba24d9637a6f65519183de0b6159'
+btn.onclick=function(){
+    if(input.value===' '){
+        alert("enter something")
+    }
+    else{
+        var location=input.value
+        var url=`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${a}`
+        fetch(url).then(res =>res.json()).then(dataa =>
+        { console.log(dataa)
+
+        let {temp}=dataa.main
+        let {name}=dataa
+        let {description}=dataa.weather[0]
+        temps.textContent=temp-272
+    locval.innerText=name
+    cloud.innerHTML=description
+})
+input.value=''
+    }
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var place={hyd:{
+//     location:'hyderabad',temp:'24',saturation:'cloudy'
+
+// },blr:{
+//     location:'bengaluru',temp:'18',saturation:'rainy'
+// }}
+// function hyderabad({place:{hyd}}){
+// console.log(hyd)
+// }
+// click.onclick=function(){
+//     if(data.style.visibility==='hidden'){
+//     data.style.visibility='visible'
+//     }
+//     else{
+//     data.style.visibility='hidden'
+
+//     }
+
+
+//  }
+
+    </script>
+</body>
+</html>
